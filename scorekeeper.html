@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ScoreKeeper</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1><span id="pp1">0</span> to <span id="pp2">0</span></h1>
+        <h3>Playing to: <span id="play">0</span></h3>
+        <h1 id="Winner"></h1>
+        <input type="text" name="input-data">
+        <button id="p1">Player One</button>
+        <button id="p2">Player Two</button>
+        <button id="p3">Reset</button>
+    </body>
+    <script>
+        var h1=document.querySelector("input");
+        var h2=document.querySelector("#play");
+        var h11=document.querySelector("#Winner");
+        var score=0;
+        h1.addEventListener("change",function(){
+            
+            h2.textContent=h1.value;
+            score=h1.value;  
+        });
+
+        var p3=document.querySelector("#p3");
+        p3.addEventListener("click",function(){
+            pp1.textContent=0;
+            pp2.textContent=0;
+            h11.textContent=" ";
+            score1=0;
+            score2=0;
+            winner=false;
+        })
+
+        var p1=document.querySelector("#p1");
+        var p2=document.querySelector("#p2");
+        var pp1=document.querySelector("#pp1");
+        var pp2=document.querySelector("#pp2");
+        var score1=0,score2=0;
+        var winner=false;
+        p1.addEventListener("click",function(){
+
+            if(score1<score && winner==false){
+            score1++;
+            pp1.textContent=score1;
+            }
+            if(score==score1){
+                
+                h11.textContent="A is Winner";
+                h11.style.color="blue";
+            }
+            
+        });
+
+        p1.addEventListener("click",function(){
+
+            if(score1<score && winner==false){
+            score1++;
+            pp1.textContent=score1;
+            }
+            if(score==score1){
+                winner=true;
+                h11.textContent="A is Winner";
+                h11.style.color="blue";
+            }
+            
+        });
+        p2.addEventListener("click",function(){
+             
+            if(score2<score && winner==false){
+             score2++;
+             pp2.textContent=score2;
+             }
+             if(score==score2){
+                winner=true;
+                 h11.textContent="B is Winner";
+                 h11.style.color="green";
+             }
+
+             });
+
+
+
+    </script>
+</html>
